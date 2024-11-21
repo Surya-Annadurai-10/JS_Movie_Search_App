@@ -15,11 +15,11 @@ valueArr.forEach((element, index) =>{
    }
 })
 
-console.log(concat);
+// console.log(concat);
    update(concat ,SearchPage);
    if (main.childNodes.length > 0){
     main.childNodes.forEach((value) =>{
-        console.log(value);
+        // console.log(value);
         value.remove();
     }) 
    }
@@ -51,6 +51,7 @@ async function fetchData(args,SearchPage) {
     let promise = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=d2b7467483aa6b94f36b4781fdb059c7&query=${args}&page=${SearchPage}`);
     let response = await promise.json();
     // console.log(response)
+    console.log(args);
     if (response){
          SearchDisplayOnUI(response.results);
         console.log(response.results);
@@ -128,7 +129,7 @@ function SearchDisplayOnUI(data){
 
 
 window.onload = () =>{
-
+alert("Please use VPN to view my full Project due to the Privacy of TMDB Api, it may not work in the Indian server");
 onLoadData(loadPage);
 }
 
@@ -172,9 +173,20 @@ function displayOnUI(data){
              </div>
        `
    
+
+
        main.appendChild(movieBox);
     })
    
+    let knowMore = document.querySelectorAll(".overview-btn");
+
+    knowMore.forEach((ele) =>{
+        ele.addEventListener("click" , () =>{
+            alert("Know More DATA is not Incorporated !!");
+            return;
+        })
+    })
+
     let next = document.createElement("button");
         let btnDiv = document.createElement("div");
         btnDiv.classList.add("btn-div");

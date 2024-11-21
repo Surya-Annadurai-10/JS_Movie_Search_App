@@ -28,7 +28,7 @@ header h1{
 section{
     width: 30%;
     height: 5vh;
-    background-color: red;
+    /* background-color: red; */
 border-radius: 30px;
 margin: auto;
 }
